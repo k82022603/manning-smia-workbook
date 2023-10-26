@@ -16,7 +16,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Mave
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/k82022603/manning-smia-workbook
+$ git clone https://github.com/k82022603/manning-smia-workbook-sample
 
 # Go into the repository
 $ cd simple-application
