@@ -16,10 +16,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Mave
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/k82022603/manning-smia-workbook
+$ git clone https://github.com/k82022603/manning-smia-workbook.git
 
 # Go into the repository
-$ cd simple-application
+$ cd ./manning-smia-workbook/chapter1-workbook/simple-application
 
 # Install dependencies
 $ mvn install
@@ -29,6 +29,7 @@ $ mvn spring-boot:run
 or 
 $ java -jar target/simple-application-0.0.1-SNAPSHOT.jar
 ```
+http://localhost:8080/hello/NAME?lastName=LASTNAME
 
 ## Contact
 
