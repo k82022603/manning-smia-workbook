@@ -1,0 +1,42 @@
+# https://cloud.spring.io/spring-cloud-gateway/reference/html/
+server:
+  port: 8072
+
+# http://localhost:8072/organization-service/v1/organization/d898a142-de44-466c-8c88-9ceb2c2429d3
+# http://localhost:8072/organization/v1/organization/d898a142-de44-466c-8c88-9ceb2c2429d3
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true        
+      routes:
+      - id: organization-service
+        uri: lb://organization-service
+        predicates:
+        - Path=/organization/**
+        filters:
+        - RewritePath=/organization/(?<path>.*), /$\{path}
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaserver:8070/eureka/
+   
+# /gateway actuator https://cloud.spring.io/spring-cloud-gateway/multi/multi__actuator_api.html
+# http://localhost:8072/actuator/gateway/routes
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "gateway"
