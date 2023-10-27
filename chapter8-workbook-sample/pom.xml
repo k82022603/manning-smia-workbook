@@ -7,14 +7,15 @@
   <artifactId>ostock-parent-pom</artifactId>
   <packaging>pom</packaging>
 
+
   <name>optimagrowth-parent-pom</name>
   <description>Parent Pom for the optimagrowth project</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.5</version>
-        <relativePath/> 
+        <version>2.3.12.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -24,6 +25,7 @@
   <modules>
     <module>configserver</module>
     <module>eurekaserver</module>
+    <module>gatewayserver</module>
     <module>licensing-service</module>
     <module>organization-service</module>
   </modules>
